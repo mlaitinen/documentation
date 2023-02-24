@@ -121,11 +121,10 @@ Reason:
     `<https://www.odoo.com>`_. The causes are likely due to the network
     infrastructure/configuration:
 
-     - The :abbr:`IoT (Internet of Things)` box does not have access to internet.
-     - The network does not allow the :abbr:`IoT (Internet of Things)` box to communicate with
-       `<https://www.odoo.com>`_. This may be due to network devices preventing the communication
-       (firewalls, etc.) or the network configuration (:abbr:`VPN (Virtual Private Network)`,
-       etc.).
+    - The :abbr:`IoT (Internet of Things)` box does not have access to internet.
+    - The network does not allow the :abbr:`IoT (Internet of Things)` box to communicate with
+      `<https://www.odoo.com>`_. This may be due to network devices preventing the communication
+      (firewalls, etc.) or the network configuration (:abbr:`VPN (Virtual Private Network)`, etc.).
 
     .. note::
        More information regarding the error that occurred can be found in the full request
@@ -153,11 +152,11 @@ Solution:
     Check if `<https://www.odoo.com>`_ is down using a web browser, as it's possible that it is down
     due to maintenance.
 
-     - If `<https://www.odoo.com>`_ is down due to maintenance, unfortunately there is nothing that
-       can be done but instead wait for it to recover.
-     - If `<https://www.odoo.com>`_ is not down due to maintenance, open a `support ticket
-       <https://www.odoo.com/help>`_ on the matter. Ensure that the 3 digits status code next to the
-       code error is included in the support ticket.
+    - If `<https://www.odoo.com>`_ is down due to maintenance, unfortunately there is nothing that
+      can be done but instead wait for it to recover.
+    - If `<https://www.odoo.com>`_ is not down due to maintenance, open a `support ticket
+      <https://www.odoo.com/help>`_ on the matter. Ensure that the 3 digits status code next to the
+      code error is included in the support ticket.
 
 `ERR_IOT_HTTPS_LOAD_REQUEST_NO_RESULT`
 --------------------------------------
