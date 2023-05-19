@@ -4,6 +4,12 @@
 Changelog
 =========
 
+Odoo Online version 16.4
+========================
+
+- `odoo.models.Model.name_get` has been deprecated with
+  TODO. Instead read display_name.
+
 Odoo Online version 16.3
 ========================
 
