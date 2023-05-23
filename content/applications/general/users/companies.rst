@@ -28,6 +28,8 @@ long as both environments are active).
       :height: 200
       :alt: View of a web browser and the favicon for a specific company chosen in Odoo
 
+.. _switch companies:
+
 Switch between or select multiple companies by enabling their selection boxes to activate them. The
 grayed company is the one which environment is in use. To switch environments, click on the
 company’s name. In the example below, the user has access to three companies, two are activated, and
