@@ -154,4 +154,4 @@ To remove users, select the users to remove and click on :guilabel:`Remove`.
 
 .. seealso::
    - :doc:`/applications/general/users/manage_users`
-   - :doc:`/applications/general/users/delete_account`
+   - :doc:`/applications/general/users/odoo_account`
