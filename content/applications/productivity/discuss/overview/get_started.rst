@@ -1,45 +1,50 @@
 ========================
-Get Started with Discuss
+Get started with discuss
 ========================
 
-Discuss allows you to bring all of your company’s communication together through messages, notes,
-and chat. Share information, projects, files, prioritize tasks, and stay connected with colleagues
-and partners throughout applications. Forge better relationships, increase productivity and
-transparency by promoting a convenient way of communicating.
+Discuss allows you to bring all of a company’s communication together through messages, notes, and
+chat. Share information, projects, files, prioritize tasks, and stay connected with colleagues and
+partners throughout applications. Forge better relationships, increase productivity and transparency
+by promoting a convenient way of communicating.
 
 .. _discuss_app/notification_preferences:
 
-Choose your notifications preference
-====================================
+Choose notifications preference
+===============================
 
-Access your *Preferences* and choose how you would like your notifications to be handled.
+Access your *preferences* by navigating to :menuselection:`Settings app --> Users --> User -->
+Preferences tab`. Then choose either :guilabel:`Handle by Emails` or :guilabel:`Handle in Odoo` for
+how the user's notifications should be handled.
 
-.. image:: get_started/change_preferences.png
+.. image:: get_started/preferences-user.png
    :align: center
    :alt: View of the preferences page for Odoo Discuss
 
-| By default, the field is set as *Handle by Emails* making messages, notes, and notifications where
-  you were mentioned or that you follow, to be sent through email. By choosing *Handle in Odoo*,
-  they are shown in the *Inbox*.
-| Messages can then be *Marked as Todo*, *Replied*, or *Marked as Read*.
+By default, the field is set as :guilabel:`Handle by Emails`. Every time a message is sent; or a
+note is sent where there is an '@' mention; or when a notification is sent on a record that the
+user's follows, a email message will be sent via the email function in Odoo.
 
-.. image:: get_started/inbox_actions.png
+By choosing :guilabel:`Handle in Odoo`, the above notifications are shown in the *Dicuss* app's
+:guilabel:`Inbox`. Messages can then be :guilabel:`Marked as Todo`, :guilabel:`Replied`,
+:guilabel:`Marked as Read` or responded with an :guilabel:`emoji`.
+
+.. image:: get_started/reactions-discuss.png
    :align: center
    :alt: View of an inbox message and its action options in Odoo Discuss
 
-The messages tagged as *Mark as Todo* are also shown in *Starred*, while the ones *Marked as Read*
-are moved to *History*.
+The messages tagged as :guilabel:`Mark as Todo` are also shown in :guilabel:`Starred`, while the
+ones :guilabel:`Marked as Read` are moved to :guilabel:`History`.
 
 .. image:: get_started/starred_messages.png
    :align: center
    :alt: View of messages marked as todo in Odoo Discuss
 
-Start Chatting
+Start chatting
 ==============
 
-The first time you log in to your account, OdooBot sends you a message asking for permission to
-receive desktop notifications to chats. If accepted, you receive push notifications to the messages
-sent to you despite of where you are in Odoo.
+The first time a user logs in their account, OdooBot sends a message asking for permission to
+receive desktop notifications to chats. If accepted, the user will receive push notifications for
+the messages they receive despite where the user is in Odoo.
 
 .. image:: get_started/odoobot_push.png
    :align: center
@@ -47,10 +52,10 @@ sent to you despite of where you are in Odoo.
          notifications for Odoo Discuss
 
 .. tip::
-   To stop receiving desktop notifications, reset the notifications settings of your browser.
+   To stop receiving desktop notifications, reset the notifications settings of the browser.
 
-To start a chat, click on *New Message* on the *Messaging Menu*, or go to *Discuss* and send a
-*Direct Message*.
+To start a chat go to *Discuss* app and click on the :guilabel:`+` icon next to :guilabel:`Direct
+Messages` or :guilabel:`Channels` in the left menu of the dashboard.
 
 .. image:: get_started/channels_direct_messages.png
    :align: center
@@ -59,13 +64,12 @@ To start a chat, click on *New Message* on the *Messaging Menu*, or go to *Discu
 
 You can also create :doc:`public and private channels <team_communication>`.
 
-Mentions in the chat and on the Chatter
+Mentions in the chat and on the chatter
 ---------------------------------------
 
-| To mention a user within a chat or the chatter type *@user-name*; to refer to a channel, type
-  *#channel-name*.
-| A notification is sent to the user mentioned either to his *Inbox* or through email, depending
-  on his settings.
+To mention a user within a chat or the chatter type *@user-name*; to refer to a channel, type
+*#channel-name*. A notification is sent to the user mentioned either to the *Inbox* or through an
+email, depending on the settings.
 
 .. image:: get_started/chat_windows.png
    :align: center
@@ -76,11 +80,11 @@ Mentions in the chat and on the Chatter
    task’s followers, and secondly on *Employees*. If the record being searched does not match with
    either a follower or employee, the scope of the search becomes all partners.
 
-Chat status
+User status
 -----------
 
 It is helpful to see what colleagues are up to and how quickly they can respond to messages by
-checking their *Status*. The status is shown on the left side of a contact’s names on Discuss’
+checking their *status*. The status is shown on the left side of a contact’s names on Discuss’
 sidebar and on the *Messaging menu*.
 
 - Green = online
@@ -95,4 +99,4 @@ sidebar and on the *Messaging menu*.
 
 .. seealso::
    - :doc:`team_communication`
-   - :doc:`/applications/general/email_communication/email_servers`
+   - :doc:`plan_activities`
