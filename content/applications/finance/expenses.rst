@@ -23,10 +23,10 @@ products in a default kanban view.
    :align: center
    :alt: Set expense costs on products.
 
-To create a new expense product, click :guilabel:`Create`. A product form will appear. Only two
-fields are required, the :guilabel:`Product Name` and the :guilabel:`Unit of Measure`. Enter the
+To create a new expense product, click :guilabel:`Create`. A product form will appear. Only the
+:guilabel:`Product Name` field is required to create a new expense product. Enter the
 :guilabel:`Product Name` in the field, and select the :guilabel:`Unit of Measure` from the drop-down
-menu (most products will be set to :guilabel:`Units`).
+menu (most products will be set to :guilabel:`Units`, which is the default selection).
 
 .. tip::
    The *Sales* app is where specification on the units of measure are created and edited (e.g.
@@ -49,9 +49,9 @@ report the actual cost when submitting an expense report.
    Here are some examples for when to set a specific :guilabel:`Cost` on a product vs. leaving the
    :guilabel:`Cost` at `0.00`:
 
-   - **Meals**: Set the :guilabel:`Cost` to `0.00`. When an employee logs an expense for a meal, they
-     enter the actual amount of the bill and will be reimbursed for that amount. An expense for a
-     meal costing $95.23 would equal a reimbursement for $95.23.
+   - **Meals**: Set the :guilabel:`Cost` to `0.00`. When an employee logs an expense for a meal,
+     they enter the actual amount of the bill and will be reimbursed for that amount. An expense for
+     a meal costing $95.23 would equal a reimbursement for $95.23.
    - **Mileage**: Set the :guilabel:`Cost` to `0.30`. When an employee logs an expense for
      "mileage", they enter the number of miles driven, and are reimbursed 0.30 per mile they
      entered. An expense for 100 miles would equal a reimbursement for $30.00.
@@ -90,48 +90,54 @@ First, click :guilabel:`Create`, and then fill out the various fields on the for
 - :guilabel:`Product`: Select the product from the drop-down menu that most closely corresponds to
   the expense. For example, an airplane ticket would be appropriate for an expense
   :guilabel:`Product` named :guilabel:`Air Travel`.
-- :guilabel:`Unit Price`: Enter the total amount paid for the expense in one of two ways:
+- :guilabel:`Total`: Enter the total amount paid for the expense in one of two ways:
 
-  #. If the expense is for one single item/expense, enter the cost in the :guilabel:`Unit Price`
-     field, and leave the :guilabel:`Quantity` `1.00`.
-  #. If the expense is for multiples of the same item/expense, enter the price *per unit* in the
-     :guilabel:`Unit Price` field, and enter the *quantity of units* in the :guilabel:`Quantity`
-     field.
+  #. If the expense is for one single item/expense with a variable price, enter the cost in the
+     :guilabel:`Total` field. Odoo will not display the :guilabel:`Quantity` field for a product if
+     it does not need to have the quantity specified (a product with a unit price of `0.00` and a
+     quantity of `1.00`).
+
+  #. If the expense is for multiples of the same item/expense with a fixed price, the
+     :guilabel:`Unit Price` is displayed. Enter the quantity in the :guilabel:`Quantity` field, and
+     the :guilabel:`Total` is automatically updated with the correct total (the :guilabel:`Quantity`
+     X the :guilabel:`Unit Price` = the :guilabel:`Total`).
 
      .. example::
-        In the case of a hotel stay, for example, the :guilabel:`Unit Price` would be set as the
-        cost *per night*, and set the :guilabel:`Quantity` to the *number of nights* stayed.
+        For example, in the case of mileage driven, the :guilabel:`Unit Price` would be set in the
+        product form as the cost *per mile*. Simply set the :guilabel:`Quantity` to the *number of
+        miles* driven, and the total for the expense is updated.
 
-- :guilabel:`Taxes`: If taxes were paid on the expense, select the tax percentage using the
-  drop-down menu. Tax options are pre-configured based on the localization setting selected when the
-  database was created. Adding any new taxes should only be done when necessary.
-
-  .. note::
-     When a tax is selected, the :guilabel:`Total` value will update in real time to show the added
-     taxes.
-
-- :guilabel:`Paid By`: Click the radio button to indicate who paid for the expense and should be
-  reimbursed. If the employee paid for the expense (and should be reimbursed) select
-  :guilabel:`Employee (to reimburse)`. If the company paid directly instead (e.g. if the company
-  credit card was used to pay for the expense) select :guilabel:`Company`.
+- :guilabel:`Bill Reference`: If there is any reference text that should be included for the
+  expense, enter it in this field.
 - :guilabel:`Expense Date`: Using the calendar module, enter the date the expense was incurred. Use
   the :guilabel:`< (left)` and :guilabel:`> (right)` arrows to navigate to the correct month, then
   click on the specific day to enter the selection.
-- :guilabel:`Bill Reference`: If there is any reference text that should be included for the
-  expense, enter it in this field.
 - :guilabel:`Account`: Select the expense account that this expense should be logged on from the
   drop-down menu.
-- :guilabel:`Employee`: Using the drop-down menu, select the employee this expense is for.
 - :guilabel:`Customer to Reinvoice`: If the expense is something that should be paid for by a
-  customer, select the customer that will be invoiced for this expense from the drop-down menu. For
-  example, if a customer wishes to have an on-site meeting, and agrees to pay for the expenses
-  associated with it (such as travel, hotel, meals, etc.), then all expenses tied to that meeting
-  would indicate that customer as the :guilabel:`Customer to Reinvoice`.
+  customer, select the customer and related sales order that will be invoiced for this expense from
+  the drop-down menu. For example, if a customer wishes to have a custom designed piece of
+  furniture, and purchased design hours from our employee, that sales order listing the hours would
+  be referenced as the :guilabel:`Customer to Reinvoice`. In the list view, there may be many
+  different sales orders referencing the same company, so be sure the correct sales order is
+  selected.
+
+.. note::
+   The :guilabel:`Customer to Reinvoice` field is only visible if the expense product has either
+   :guilabel:`At cost` or :guilabel:`Sales price` selected under the :guilabel:`Re-Invoice Expenses`
+   section. If :guilabel:`No` is selected for the :guilabel:`Re-Invoice Expenses` section, the
+   :guilabel:`Customer to Reinvoice` field is hidden.
+
 - :guilabel:`Analytic Account`: Select the account the expense should be written against from the
   drop-down menu.
 - :guilabel:`Company`: If multiple companies are set-up, select the company this expense should be
   filed for from the drop-down menu. If there is only one company, this field will be automatically
   populated.
+- :guilabel:`Employee`: Using the drop-down menu, select the employee this expense is for.
+- :guilabel:`Paid By`: Click the radio button to indicate who paid for the expense and should be
+  reimbursed. If the employee paid for the expense (and should be reimbursed) select
+  :guilabel:`Employee (to reimburse)`. If the company paid directly instead (e.g. if the company
+  credit card was used to pay for the expense) select :guilabel:`Company`.
 - :guilabel:`Notes...`: If any notes are needed in order to clarify the expense, enter them in the
   notes field.
 
@@ -153,14 +159,42 @@ into an :guilabel:`Edit` button).
    :alt: Attach a receipt after saving the record.
 
 Click the new :guilabel:`Attach Receipt` button, and a file explorer appears. Navigate to the
-receipt to be attached, and click :guilabel:`Open`. A new :guilabel:`Receipts` smart button appears
-at the top, and the new receipt is recorded in the chatter. More than one receipt can be attached to
-an individual expense, as needed. The number of receipts attached to the expense will be noted on
-the smart button.
+receipt to be attached, and click :guilabel:`Open`. The new receipt is recorded in the chatter, and
+the number of receipts will appear next to the :guilabel:`📎(paperclip)` icon beneath the expense
+form. More than one receipt can be attached to an individual expense, as needed. The number of
+receipts attached to the expense will be noted on the paperclip icon.
 
-.. image:: expenses/receipt-smartbutton.png
+.. image:: expenses/receipt-icon.png
    :align: center
-   :alt: Attach a receipt after saving the record.
+   :alt: View receipts in the chatter and see how many receipts are attached byu looking at the
+         paperclip icon in the chatter beneath the record.
+
+Digitize a receipt
+~~~~~~~~~~~~~~~~~~
+
+Once a receipt is uploaded, the data can be digitized for quicker
+
+Create new expenses from a scanned receipt
+------------------------------------------
+
+Rather than manually inputting all of the information for an expense, expenses can be created
+automatically by scanning in a PDF of a receipt.
+
+First, in the main *Expenses* app dashboard view (this view can also be accessed from
+:menuselection:`Expenses app --> My Expenses --> My Expenses to Report`), click :guilabel:`Scan`,
+and a file explorer pops up. Navigate to the receipt to be uploaded, click on it, and click
+:guilabel:`Open`.
+
+.. image:: expenses/scan.png
+   :align: center
+   :alt: Create an expense by scanning a receipt. Click Scan at the top of the Expenses dashboard
+         view.
+
+The receipt is scanned, and a new entry is created with today's date as the :guilabel:`Expense
+Date`, and any other fields it can populate based on the scanned data. Click on the new entry to
+open the individual expense form, and click :guilabel:`Edit`. The receipt that was scanned in
+appears in the chatter. Make any edits to the form, then click :guilabel:`Save` when all the
+information is entered.
 
 Automatically create new expenses from an email
 -----------------------------------------------
@@ -243,13 +277,19 @@ each entry, or quickly select all the expenses in the list by clicking the check
    :alt: Select the expenses to submit, then create the report.
 
 Once the expenses have been selected, click the :guilabel:`Create Report` button. The new report
-appears with all the expenses listed, and the number of documents is visible in the
-:guilabel:`Documents` smart button.
+appears with all the expenses listed, and the :guilabel:`Employee`, :guilabel:`Paid By`,
+:guilabel:`Expense Journal`, and :guilabel:`Company` fields are automatically populated from the
+individual expenses in the report.
 
-It is recommended to add a short summary for each report to help keep expenses organized. Click the
-:guilabel:`Edit` button, and the :guilabel:`Expense Report Summary` field appears. Enter a short
-description for the expense report (such as `Client Trip NYC`, or `Repairs for Company Car`). Next,
-select a :guilabel:`Manager` from the drop-down menu to assign a manager to review the report.
+It is recommended to add a short summary for each report to help keep expenses organized. Enter a
+short description for the expense report (such as `Client Trip NYC`, or `Repairs for Company Car`)
+in the :guilabel:`Expense Report Summary` field.
+
+.. note::
+   If all the expenses are listed for the same date, the date for the expenses will be pre-populated
+   in the :guilabel:`Expense Report Summary` field.
+
+Next, select a :guilabel:`Manager` from the drop-down menu to assign a manager to review the report.
 
 .. image:: expenses/expense-report-summary.png
    :align: center
@@ -263,11 +303,14 @@ add, then click :guilabel:`Select`. The items now appear on the report that was 
    :align: center
    :alt: Add more expenses to the report before submitting.
 
-.. note::
-   :guilabel:`Add a line` only appears when the document is in edit mode. It does not appear
-   otherwise.
+When all edits have been completed, click :guilabel:`Save`. Once the expense report is saved, an
+:guilabel:`Expenes` smart button appears in the top right, listing the number of expenses on the
+report. Click the smart button to view the individual expenses in a list.
 
-When all edits have been completed, click :guilabel:`Save`.
+.. image:: expenses/expense-smart-button.png
+   :align: center
+   :alt: An Expenses smart button appears after saving the expense report.
+
 
 Submit an expense report
 ------------------------
@@ -347,8 +390,9 @@ noted by the :guilabel:`Submitted` tag in the status column.
 Reports can be approved in two ways (individually or several at once) and refused only one way. To
 approve multiple expense reports at once, remain in the list view. First, select the reports to
 approve by clicking the check box next to each report, or click the box next to :guilabel:`Employee`
-to select all reports in the list. Next, click on the :guilabel:`⚙️ Action (gear)` icon, then click
-:guilabel:`Approve Report`.
+to select all reports in the list. Next, click the :guilabel:`Approve Report` button. The number of
+reports that are selected appear next to the  :guilabel:`Approve Report` button, in an :guilabel:`X
+Selected` button, with X being the number of reports currently selected.
 
 .. image:: expenses/approve-report.png
    :align: center
@@ -409,7 +453,8 @@ all reports in the list. Next, click on the :guilabel:`⚙️ Action (gear)` ico
 
 To post an individual report, click on a report to go to the detailed view of that report. In this
 view, several options are presented: :guilabel:`Post Journal Entries`, :guilabel:`Report In Next
-Payslip`, or :guilabel:`Refuse`. Click :guilabel:`Post Journal Entries` to post the report.
+Payslip`, :guilabel:`Refuse`, or :guilabel:`Reset to Draft`. Click :guilabel:`Post Journal Entries`
+to post the report.
 
 If :guilabel:`Refuse` is clicked, a pop-up window appears. Enter a brief explanation for the refusal
 in the :guilabel:`Reason to refuse Expense` field, then click :guilabel:`Refuse`. Refused reports
@@ -438,8 +483,7 @@ Reports To Pay`.
 Just like approvals and posting, expense reports can be paid in two ways (individually or several at
 once). To pay multiple expense reports at once, remain in the list view. First, select the reports
 to pay by clicking the check box next to each report, or click the box next to :guilabel:`Employee`
-to select all reports in the list. Next, click on the :guilabel:`⚙️ Action (gear)` icon, then click
-:guilabel:`Register Payment`.
+to select all reports in the list. Next, click :guilabel:`Register Payment`.
 
 .. image:: expenses/register-payment.png
    :align: center
@@ -534,3 +578,4 @@ invoice is a :guilabel:`Regular invoice`, :guilabel:`Down payment (percentage)`,
 payment (fixed amount)` by clicking the radio button next to the selection. For either down payment
 options, enter the amount (fixed or percentage) in the :guilabel:`Down Payment Amount` field.
 Finally, click either :guilabel:`create and view invoice` or :guilabel:`create invoice`.
+
