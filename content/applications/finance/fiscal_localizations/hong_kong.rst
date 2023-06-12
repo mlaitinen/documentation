@@ -33,8 +33,8 @@ FPS bank account configuration
 ------------------------------
 
 Go to :menuselection:`Contacts --> Configuration --> Bank Accounts` and select the bank account for
-which you want to activate FPS. Set the :guilabel:`FPS Type` and fill in the :guilabel:`FPS ID/Phone
-Number/Email Address` field depending on the type you chose.
+which you want to activate FPS. Set the :guilabel:`Proxy Type` and fill in the :guilabel:`Proxy
+Value` field depending on the type you chose.
 
 .. note::
    The account holder's country must be set to Hong Kong on its contact form.
@@ -42,6 +42,10 @@ Number/Email Address` field depending on the type you chose.
 .. image:: hong_kong/hk-fps-bank-setting.png
    :align: center
    :alt: FPS bank account configuration
+
+.. note::
+   You could also include the invoice number in the QR code by checking the :guilabel:`Include
+   Reference` checkbox.
 
 .. seealso::
    :doc:`../accounting/bank`
